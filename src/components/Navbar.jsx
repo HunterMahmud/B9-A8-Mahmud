@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import './Navbar.css'
 
 const Navbar = () => {
     const navItem = <>
-    <li><a>Home</a></li>
-    <li><a>Listed Books</a></li>
-    <li><a>Pages to Read</a></li>
+    <NavLink to='/' className="mr-4 font-semibold text-lg p-2">Home</NavLink>
+    <NavLink to='/booklist' className="mr-4 font-semibold text-lg p-2">Listed Books</NavLink>
+    <NavLink to='/pages' className="mr-4 font-semibold text-lg p-2">Pages to Read</NavLink>
     </>
     
     
@@ -32,7 +33,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
           >
             {navItem}
           </ul>
@@ -45,8 +46,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex gap-2">
-        <a className="btn text-white bg-[#23BE0A]">Sign In</a>
-        <a className="btn text-white bg-[#59C6D2]">Sign Up</a>
+        <a className="btn font-semibold text-lg text-white bg-[#23BE0A]">Sign In</a>
+        <a className="btn font-semibold text-lg text-white bg-[#59C6D2]">Sign Up</a>
       </div>
     </div>
   );
