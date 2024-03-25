@@ -34,7 +34,7 @@
       "totalPages": 324,
       "rating": 4.7,
       "category": "Fiction",
-      "tags": ["Coming of Age", "Social Justice", "Historical Fiction"],
+      "tags": ["Justice", "Historical"],
       "publisher": "J. B. Lippincott & Co.",
       "yearOfPublishing": 1960
     },
@@ -47,7 +47,7 @@
       "totalPages": 544,
       "rating": 4.5,
       "category": "Science Fiction",
-      "tags": ["Political Intrigue", "Ecology", "Space Opera"],
+      "tags": ["Political", "Ecology", "Space"],
       "publisher": "Chilton Books",
       "yearOfPublishing": 1965
     },
@@ -60,7 +60,7 @@
       "totalPages": 487,
       "rating": 4.3,
       "category": "Magical Realism",
-      "tags": ["Family Saga", "History", "Latin American Literature"],
+      "tags": ["Family", "History", "Literature"],
       "publisher": "Editorial Sudamericana",
       "yearOfPublishing": 1967
     },
