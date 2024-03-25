@@ -1,0 +1,80 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Martian",
+        "author": "Andy Weir",
+        "image": "https://i.ibb.co/L0jw4hK/1-the-martin.jpg",
+        "review": "A thrilling tale of survival and ingenuity as an astronaut is stranded alone on Mars.",
+        "totalPages": 384,
+        "rating": 4.6,
+        "category": "Science Fiction",
+        "tags": ["Survival", "Science", "First Person"],
+        "publisher": "Crown Publishing Group",
+        "yearOfPublishing": 2011
+      },
+    {
+      "bookId": 2,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "https://i.ibb.co/8c4BFGP/2-cover.jpg",
+      "review": "A witty and timeless social commentary on love, class, and societal expectations.",
+      "totalPages": 224,
+      "rating": 4.2,
+      "category": "Romance",
+      "tags": ["Classic", "Satire", "Witty"],
+      "publisher": "Egerton Smith",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": 3,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://i.ibb.co/272x1py/3-1200px-To-Kill-a-Mockingbird-first-edition-cover.jpg",
+      "review": "A powerful and moving story about racial injustice in the American South, seen through the eyes of a young girl.",
+      "totalPages": 324,
+      "rating": 4.7,
+      "category": "Fiction",
+      "tags": ["Coming of Age", "Social Justice", "Historical Fiction"],
+      "publisher": "J. B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 4,
+      "bookName": "Dune",
+      "author": "Frank Herbert",
+      "image": "https://i.ibb.co/yN3k70J/4-dune.jpg",
+      "review": "A complex and thought-provoking science fiction epic set on a desert planet with a valuable spice.",
+      "totalPages": 544,
+      "rating": 4.5,
+      "category": "Science Fiction",
+      "tags": ["Political Intrigue", "Ecology", "Space Opera"],
+      "publisher": "Chilton Books",
+      "yearOfPublishing": 1965
+    },
+    {
+      "bookId": 5,
+      "bookName": "One Hundred Years of Solitude",
+      "author": "Gabriel García Márquez",
+      "image": "https://i.ibb.co/z66rpRg/5-100-Years-First.jpg",
+      "review": "A magical realist masterpiece that chronicles the rise and fall of a family through generations in a fictional Colombian town.",
+      "totalPages": 487,
+      "rating": 4.3,
+      "category": "Magical Realism",
+      "tags": ["Family Saga", "History", "Latin American Literature"],
+      "publisher": "Editorial Sudamericana",
+      "yearOfPublishing": 1967
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "image": "https://i.ibb.co/09mGBbb/6-galaxy.jpg",
+      "review": "A hilarious and absurdist science fiction comedy about a man who escapes Earth's destruction with his friend and a sentient towel.",
+      "totalPages": 192,
+      "rating": 4.4,
+      "category": "Science Fiction",
+      "tags": ["Comedy", "Satire", "Space Travel"],
+      "publisher": "Pan Books",
+      "yearOfPublishing": 1979
+    }
+  ]
