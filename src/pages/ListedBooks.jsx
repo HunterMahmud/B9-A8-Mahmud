@@ -1,35 +1,19 @@
-import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-import { getDataFromLocalStorage } from './../utils/LocalStorage';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getDataFromLocalStorage } from "./../utils/LocalStorage";
+import Listed from './../components/Listed';
 
 const ListedBooks = () => {
   const [currentTab, setCurrentTab] = useState(0);
-  const [selectedValue, setSelectedValue] = useState(true);
-  const handleOptionChange = (event)=>{
-    //setSelectedValue();
-   // console.log(event.target.value);
-    let localReadData = getDataFromLocalStorage('read');
-    let localWishData = getDataFromLocalStorage('wishlist');
-    if(event.target.value=='1'){
-     
-      localReadData.sort((book1, book2) => book2.rating - book1.rating);
-      localWishData.sort((book1, book2) => book2.rating - book1.rating);
-      
+  const [sortManage,setSortManage] = useState('');
+  const [localData, setLocalData] = useState([]);
+  useEffect(() => {
+    if (currentTab == 0) {
+      setLocalData( getDataFromLocalStorage("read"));
+    } else if (currentTab == 1) {
+      setLocalData( getDataFromLocalStorage("wishlist"));
     }
-    else if(event.target.value=='2'){
-      
-      localReadData.sort((book1,book2) => book2.totalPages-book1.totalPages);
-      localWishData.sort((book1,book2) => book2.totalPages-book1.totalPages);
-    }
-    else if(event.target.value == '3'){
-     
-      localReadData.sort((book1,book2)=> book2.yearOfPublishing - book1.yearOfPublishing);
-      localWishData.sort((book1,book2)=> book2.yearOfPublishing - book1.yearOfPublishing);
-    }
-    localStorage.setItem('read',JSON.stringify(localReadData));
-    localStorage.setItem('wishlist',JSON.stringify(localWishData));
-  }
-
+  }, [currentTab]);
   return (
     <div className="max-w-6xl mx-auto">
       <h1 className="text-center p-5 text-[#131313] my-5 text-3xl bg-[#1313130D] font-bold rounded-2xl">
@@ -37,18 +21,24 @@ const ListedBooks = () => {
       </h1>
 
       <div className="flex justify-center mx-auto mt-5 mb-10">
-        
         <select
           className="bg-[#23BE0A] border rounded-lg shadow-sm p-3 text-white font-medium focus:outline-none"
           id="books"
           name="books"
+          
           defaultValue=""
-          onChange={handleOptionChange}
+          
         >
           <option value="">Sort By</option>
-          <option className="bg-gray-100 py-2 text-gray-900 " value="1" >Rating</option>
-          <option className="bg-gray-100 py-2 text-gray-900 " value="2">Number of Pages</option>
-          <option className="bg-gray-100 py-2 text-gray-900 " value="3">Publishing year</option>
+          <option className="bg-gray-100 py-2 text-gray-900 " value="1">
+            Rating
+          </option>
+          <option className="bg-gray-100 py-2 text-gray-900 " value="2">
+            Number of Pages
+          </option>
+          <option className="bg-gray-100 py-2 text-gray-900 " value="3">
+            Publishing year
+          </option>
         </select>
       </div>
 
@@ -76,7 +66,7 @@ const ListedBooks = () => {
         </Link>
         <Link
           onClick={() => setCurrentTab(1)}
-          to={`wishlistbooks`}
+          to=""
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
             currentTab === 1 ? "border border-b-0 rounded-t-lg" : "border-b"
           }`}
@@ -97,12 +87,14 @@ const ListedBooks = () => {
           <span>Wishlist Books</span>
         </Link>
       </div>
-      
-      <Outlet />
-      
+
+      <div className="flex my-10 flex-col gap-4">
+        {localData.map((book) => (
+          <Listed key={book.bookId} book={book} />
+        ))}
+      </div>
     </div>
   );
 };
 
 export default ListedBooks;
-
