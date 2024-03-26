@@ -13,7 +13,31 @@ const ListedBooks = () => {
     } else if (currentTab == 1) {
       setLocalData( getDataFromLocalStorage("wishlist"));
     }
-  }, [currentTab]);
+  }, [currentTab,sortManage]);
+  const handleOptionChange = (event)=>{
+    let localReadData = getDataFromLocalStorage('read');
+    let localWishData = getDataFromLocalStorage('wishlist');
+    if(event.target.value=='1'){
+     
+      localReadData.sort((book1, book2) => book2.rating - book1.rating);
+      localWishData.sort((book1, book2) => book2.rating - book1.rating);
+      
+    }
+    else if(event.target.value=='2'){
+      
+      localReadData.sort((book1,book2) => book2.totalPages-book1.totalPages);
+      localWishData.sort((book1,book2) => book2.totalPages-book1.totalPages);
+    }
+    else if(event.target.value == '3'){
+     
+      localReadData.sort((book1,book2)=> book2.yearOfPublishing - book1.yearOfPublishing);
+      localWishData.sort((book1,book2)=> book2.yearOfPublishing - book1.yearOfPublishing);
+    }
+    localStorage.setItem('read',JSON.stringify(localReadData));
+    localStorage.setItem('wishlist',JSON.stringify(localWishData));
+    setSortManage(event.target.value);
+  }
+
   return (
     <div className="max-w-6xl mx-auto">
       <h1 className="text-center p-5 text-[#131313] my-5 text-3xl bg-[#1313130D] font-bold rounded-2xl">
@@ -25,7 +49,7 @@ const ListedBooks = () => {
           className="bg-[#23BE0A] border rounded-lg shadow-sm p-3 text-white font-medium focus:outline-none"
           id="books"
           name="books"
-          
+          onChange={handleOptionChange}
           defaultValue=""
           
         >
