@@ -5,7 +5,7 @@ import { MdOutlineContactPage } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Listed = ({ book }) => {
-  console.log(book);
+  //console.log(book);
   const { bookId, image, bookName, author,  category,tags, yearOfPublishing, rating, publisher, totalPages } = book;
   return (
     <div className="w-full mx-auto bg-white border p-3 rounded-2xl border-[#13131326]">
