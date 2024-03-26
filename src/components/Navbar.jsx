@@ -5,8 +5,8 @@ import './Navbar.css'
 const Navbar = () => {
     const navItem = <>
     <NavLink to='/' className="mr-4 font-semibold text-lg p-2">Home</NavLink>
-    <NavLink to='/booklist' className="mr-4 font-semibold text-lg p-2">Listed Books</NavLink>
-    <NavLink to='/pages' className="mr-4 font-semibold text-lg p-2">Pages to Read</NavLink>
+    <NavLink to='/listedbooks' className="mr-4 font-semibold text-lg p-2">Listed Books</NavLink>
+    <NavLink to='/pagestoread' className="mr-4 font-semibold text-lg p-2">Pages to Read</NavLink>
     </>
     
     
@@ -38,7 +38,7 @@ const Navbar = () => {
             {navItem}
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost text-xl">NovaBooks</Link>
+        <Link to='/' className="btn btn-ghost text-3xl font-bold">NovaBooks</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

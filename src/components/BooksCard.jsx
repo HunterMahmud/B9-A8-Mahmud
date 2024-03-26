@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const  BooksCard = ({ book }) => {
-  console.log(book);
-  const { bookName, author, image, rating, tags } = book;
+  //console.log(book);
+  const { bookId, bookName, author, image, rating, tags,category } = book;
   return (
-    <div className="card bg-base-100 border max-w-[400px] mx-auto border-gray-300">
+    <Link to={`/bookdetails/${bookId}`} className="card bg-base-100 border max-w-[400px] mx-auto border-gray-300">
       <figure className="px-10 pt-10">
         <img src={image} alt="Shoes" className="rounded-xl max-h-[350px] w-[370px]" />
       </figure>
@@ -18,14 +19,14 @@ const  BooksCard = ({ book }) => {
         <p className="font-medium text-[#131313CC]">By: {author}</p>
         <div className="divider border-t-2 h-0 border-dashed border-gray-400"></div>
         <div className="flex w-full justify-between text-[#131313CC] font-medium">
-          <p>Fiction</p>
+          <p>{category}</p>
           <div className="flex gap-3 items-center">
             <p>{rating}</p>
             <img className="w-5 h-5" src="/icon-star.png" alt="" />
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
