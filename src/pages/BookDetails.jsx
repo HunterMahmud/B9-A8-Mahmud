@@ -8,7 +8,6 @@ import { getDataFromLocalStorage } from './../utils/LocalStorage';
 const BookDetails = () => {
   const bookData = useLoaderData();
   const { id } = useParams();
-  //console.log(id, bookData);
   const bookInfo = bookData.find((book) => book.bookId == id);
   const {
     image,

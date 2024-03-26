@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const  BooksCard = ({ book }) => {
-  //console.log(book);
+  
   const { bookId, bookName, author, image, rating, tags,category } = book;
   return (
     <Link to={`/bookdetails/${bookId}`} className="card bg-base-100 border max-w-[400px] mx-auto border-gray-300">
