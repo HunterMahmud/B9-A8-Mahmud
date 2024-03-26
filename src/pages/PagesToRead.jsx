@@ -2,6 +2,8 @@ import React from "react";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 import { getDataFromLocalStorage } from "./../utils/LocalStorage";
 import { ResponsiveContainer } from "recharts";
+import NoPagesToRead from "../components/NoPagesToRead";
+
 
 
 
@@ -24,6 +26,7 @@ const TriangleBar = (props) => {
 
 const PagesToRead = () => {
   const localData = getDataFromLocalStorage("read");
+  if(localData.length<1) return <NoPagesToRead />
   return (
     <div className="max-w-6xl over min-h-[calc(100vh-100px)] mx-auto">
       <ResponsiveContainer width="100%" height={500}>

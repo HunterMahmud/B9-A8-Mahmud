@@ -4,7 +4,7 @@ import Listed from './Listed';
 
 const ReadBooks = () => {
     const localData  = getDataFromLocalStorage('read');
-    console.log(localData);
+    //console.log(localData);
     return (
         <div className='flex my-10 flex-col gap-4'>
             {
