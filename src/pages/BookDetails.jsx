@@ -1,6 +1,9 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router-dom";
 import BookDetailsTable from "../components/BookDetailsTable";
+import { saveToLocalStorage } from "../utils/LocalStorage";
+import { getDataFromLocalStorage } from './../utils/LocalStorage';
 
 const BookDetails = () => {
   const bookData = useLoaderData();
@@ -19,7 +22,20 @@ const BookDetails = () => {
     publisher,
     yearOfPublishing,
   } = bookInfo;
-  console.log(bookInfo);
+  const handleReadList = (id)=> {
+    const readBookInfo = bookData.find((book) => book.bookId == id);
+    saveToLocalStorage('read',readBookInfo, "Read");
+  }
+  const handleWishList = (id)=> {
+    const readList = getDataFromLocalStorage('read');
+    const isEsistsInReadList = readList.find((b)=> b.bookId == id);
+    if(isEsistsInReadList){
+      toast.error('Already in Read List')
+    }else{
+      const readBookInfo = bookData.find((book) => book.bookId == id);
+      saveToLocalStorage('wishlist',readBookInfo, "Wish");
+    }
+  }
   return (
     <div className="hero max-w-6xl mx-auto bg-white">
       <div className="hero-content flex-col lg:flex-row">
@@ -70,8 +86,8 @@ const BookDetails = () => {
             </div>
           </div>
           <div className="flex gap-2 mt-3">
-          <button className="border border-[#1313134D] rounded-lg text-[#131313] font-semibold text-xl px-7 py-3">Read</button>
-          <button className="bg-[#50B1C9] font-semibold text-xl px-6 py-3 rounded-lg">Wishlist</button>
+          <button onClick={()=> handleReadList(id)} className="border border-[#1313134D] rounded-lg text-[#131313] font-semibold text-xl px-7 py-3">Read</button>
+          <button onClick={()=> handleWishList(id)} className="bg-[#50B1C9] font-semibold text-xl px-6 py-3 rounded-lg">Wishlist</button>
           </div>
         </div>
       </div>
