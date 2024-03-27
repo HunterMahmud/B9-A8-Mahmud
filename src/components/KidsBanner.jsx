@@ -2,8 +2,8 @@ import React from "react";
 
 const KidsBanner = () => {
   return (
-    <div className="rounded-3xl py-7 min-h-[550px] md:max-w-6xl bg-base-200 mx-4 flex flex-col items-center justify-center box-border lg:mx-auto">
-      <div className="carousel w-full">
+    <div className="rounded-3xl w-[95%] max-w-6xl bg-base-200 mx-4 sm:mx-auto flex flex-col items-center justify-center box-border">
+      <div className="carousel w-full mx-auto">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://i.ibb.co/5MFyb6X/kids-banner-1.jpg"

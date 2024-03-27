@@ -43,7 +43,7 @@ const BookDetails = () => {
       <div className="flex items-center justify-center gap-5 flex-col lg:flex-row">
         <img
           src={image}
-          className="w-[110%] sm:max-w-[500px] mx-5 h-[740px] rounded-2xl p-9 py-16 sm:p-20 sm:py-[110px] bg-[#1313130D]"
+          className={`w-[110%] sm:max-w-[500px] mx-5 h-[450px] sm:h-[740px] rounded-2xl p-9 py-16 sm:p-20 sm:py-[110px] ${bookInfo?.ageRange? 'bg-pink-500':'bg-[#1313130D]'}`}
         />
         
 

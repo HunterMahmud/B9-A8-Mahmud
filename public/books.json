@@ -8,7 +8,7 @@
         "totalPages": 384,
         "rating": 4.6,
         "category": "Science Fiction",
-        "tags": ["Survival", "Science", "First Person"],
+        "tags": ["Survival", "Science"],
         "publisher": "Crown Publishing Group",
         "yearOfPublishing": 2011
       },
@@ -21,7 +21,7 @@
       "totalPages": 224,
       "rating": 4.2,
       "category": "Romance",
-      "tags": ["Classic", "Satire", "Witty"],
+      "tags": ["Classic", "Satire"],
       "publisher": "Egerton Smith",
       "yearOfPublishing": 1813
     },
@@ -60,7 +60,7 @@
       "totalPages": 487,
       "rating": 4.3,
       "category": "Magical Realism",
-      "tags": ["Family", "History", "Literature"],
+      "tags": ["History", "Literature"],
       "publisher": "Editorial Sudamericana",
       "yearOfPublishing": 1967
     },
@@ -73,7 +73,7 @@
       "totalPages": 192,
       "rating": 4.4,
       "category": "Science Fiction",
-      "tags": ["Comedy", "Satire", "Space Travel"],
+      "tags": ["Comedy", "Space Travel"],
       "publisher": "Pan Books",
       "yearOfPublishing": 1979
     }

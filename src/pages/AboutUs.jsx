@@ -1,6 +1,9 @@
 import React from "react";
 
 const AboutUs = () => {
+  const handleSubmit = (e)=> {
+    console.log(e);
+  }
   return (
     <>
       <div className="mx-5">
@@ -54,7 +57,7 @@ const AboutUs = () => {
           </div>
           {/* about section done */}
 
-          <h1 className="text-[#131313] text-[40px] text-center font-bold">
+          <h1 className="text-[#131313] text-[40px] my-10 text-center font-bold">
             FAQ
           </h1>
 
@@ -153,7 +156,7 @@ const AboutUs = () => {
         {/* faq section ends */}
         <div>
           <section className="py-6 mt-6">
-            <form className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-gray-50">
+            <form onChange={handleSubmit} className="container w-full max-w-6xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-50">
               <h2 className="w-full text-3xl font-bold leading-tight">
                 Contact us
               </h2>
