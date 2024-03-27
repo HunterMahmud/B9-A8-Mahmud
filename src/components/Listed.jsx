@@ -24,7 +24,7 @@ const Listed = ({ book,path }) => {
         <div className="lg:col-span-3  lg:w-[230px] lg:h-[260px]">
           <img
             src={image}
-            className={`w-[300px] h-[450px] sm:w-full sm:h-full rounded-2xl p-10 py-[50px] ${book?.ageRange?'bg-pink-300':'bg-[#1313130D]'}`}
+            className={`w-[300px] h-[450px] sm:w-full sm:h-full rounded-2xl p-10 py-[50px] ${book?.ageRange?'bg-[#1313130D]':'bg-[#1313130D]'}`}
           />
         </div>
 

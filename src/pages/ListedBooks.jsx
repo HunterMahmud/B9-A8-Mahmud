@@ -68,7 +68,7 @@ const ListedBooks = () => {
         </select>
       </div>
 
-      <div className="flex items-center overflow-x-auto overflow-y-hidden w-[95%] sm:w-full ml-5  sm:justify-start flex-nowrap">
+      <div className="flex items-center overflow-x-auto overflow-y-hidden w-[93%] sm:w-full ml-5  sm:justify-start flex-nowrap">
         <Link
           onClick={() => setCurrentTab(0)}
           to=""
