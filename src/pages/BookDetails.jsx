@@ -8,7 +8,6 @@ import { FaChildren } from "react-icons/fa6";
 
 const BookDetails = () => {
   const bookData = useLoaderData();
-  console.log(bookData);
   const { id } = useParams();
   const bookInfo = bookData.find((book) => book.bookId == id);
   const {
@@ -23,7 +22,7 @@ const BookDetails = () => {
     publisher,
     yearOfPublishing,
   } = bookInfo;
-  console.log(bookInfo);
+  
   const handleReadList = (id) => {
     const readBookInfo = bookData.find((book) => book.bookId == id);
     saveToLocalStorage("read", readBookInfo, "Read");
@@ -39,11 +38,12 @@ const BookDetails = () => {
     }
   };
   return (
-    <div className=" max-w-6xl my-16 mx-auto bg-white">
-      <div className="flex relative items-center justify-center gap-5 flex-col  lg:flex-row">
+    <div className="flex flex-col items-center justify-center mx-7">
+      <div className=" max-w-6xl my-16 mx-auto bg-white">
+      <div className="flex items-center justify-center gap-5 flex-col lg:flex-row">
         <img
           src={image}
-          className="max-w-[500px]  h-[740px] rounded-2xl p-20 py-[110px] bg-[#1313130D]"
+          className="w-[110%] sm:max-w-[500px] mx-5 h-[740px] rounded-2xl p-9 py-16 sm:p-20 sm:py-[110px] bg-[#1313130D]"
         />
         
 
@@ -62,7 +62,7 @@ const BookDetails = () => {
               <div className="flex gap-4 items-center text-xl">
                 <FaChildren className="text-2xl bg-gray-700 rounded-full text-pink-500 w-10 h-10 p-2" />
                 <p className="font-medium text-xl text-[#131313CC]">
-                  Kids Book for [{bookInfo.ageRange}] years
+                  Kids Book for [{bookInfo?.ageRange}] years
                 </p>
               </div>
               <div className="divider h-0"></div>
@@ -124,6 +124,7 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
