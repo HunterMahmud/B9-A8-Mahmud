@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const AboutUs = () => {
-  const handleSubmit = (e)=> {
-    console.log(e);
-  }
+  const [contactDetails, setContactDetails] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInput = (property, value) => {
+    setContactDetails((prev) => ({
+      ...prev,
+      [property]: value,
+    }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const prevUser = JSON.parse(localStorage.getItem("user")) || [];
+    prevUser.push(contactDetails);
+    localStorage.setItem("user", JSON.stringify(prevUser));
+    toast.success("Your Information Saved to LocalStorage.")
+  };
+
   return (
     <>
       <div className="mx-5">
@@ -27,7 +45,8 @@ const AboutUs = () => {
               passionate individuals who possess a genuine ardor for books and
               the written word. As the landscape of book purchasing evolves with
               the advent of online shopping, we recognized the importance of
-              providing an effortless and accessible avenue for acquiring
+              providing an effortless and accessible avenue forimport { toast } from 'react-hot-toast';
+ acquiring
               literature.
             </p>
 
@@ -156,13 +175,17 @@ const AboutUs = () => {
         {/* faq section ends */}
         <div>
           <section className="py-6 mt-6">
-            <form onChange={handleSubmit} className="container w-full max-w-6xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-50">
+            <form
+              onSubmit={handleSubmit}
+              className="container w-full max-w-6xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-50"
+            >
               <h2 className="w-full text-3xl font-bold leading-tight">
                 Contact us
               </h2>
               <div>
                 <label className="block mb-1 ml-1">Name</label>
                 <input
+                  onChange={(e) => handleInput("name", e.target.value)}
                   id="name"
                   type="text"
                   placeholder="Your name"
@@ -173,6 +196,7 @@ const AboutUs = () => {
               <div>
                 <label className="block mb-1 ml-1">Email</label>
                 <input
+                  onChange={(e) => handleInput("email", e.target.value)}
                   id="email"
                   type="email"
                   placeholder="Your email"
@@ -183,6 +207,7 @@ const AboutUs = () => {
               <div>
                 <label className="block mb-1 ml-1">Message</label>
                 <textarea
+                  onChange={(e) => handleInput("message", e.target.value)}
                   id="message"
                   type="text"
                   placeholder="Message..."
