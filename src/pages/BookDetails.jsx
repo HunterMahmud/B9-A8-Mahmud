@@ -3,7 +3,11 @@ import toast from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router-dom";
 import BookDetailsTable from "../components/BookDetailsTable";
 import { saveToLocalStorage } from "../utils/LocalStorage";
-import { getDataFromLocalStorage } from './../utils/LocalStorage';
+import { getDataFromLocalStorage } from "./../utils/LocalStorage";
+import { FaChildren } from "react-icons/fa6";
+
+
+
 
 const BookDetails = () => {
   const bookData = useLoaderData();
@@ -21,20 +25,21 @@ const BookDetails = () => {
     publisher,
     yearOfPublishing,
   } = bookInfo;
-  const handleReadList = (id)=> {
+  console.log(bookInfo);
+  const handleReadList = (id) => {
     const readBookInfo = bookData.find((book) => book.bookId == id);
-    saveToLocalStorage('read',readBookInfo, "Read");
-  }
-  const handleWishList = (id)=> {
-    const readList = getDataFromLocalStorage('read');
-    const isEsistsInReadList = readList.find((b)=> b.bookId == id);
-    if(isEsistsInReadList){
-      toast.error('Already in Read List')
-    }else{
+    saveToLocalStorage("read", readBookInfo, "Read");
+  };
+  const handleWishList = (id) => {
+    const readList = getDataFromLocalStorage("read");
+    const isEsistsInReadList = readList.find((b) => b.bookId == id);
+    if (isEsistsInReadList) {
+      toast.error("Already in Read List");
+    } else {
       const readBookInfo = bookData.find((book) => book.bookId == id);
-      saveToLocalStorage('wishlist',readBookInfo, "Wish");
+      saveToLocalStorage("wishlist", readBookInfo, "Wish");
     }
-  }
+  };
   return (
     <div className="hero max-w-6xl mx-auto bg-white">
       <div className="hero-content flex-col lg:flex-row">
@@ -44,13 +49,21 @@ const BookDetails = () => {
         />
 
         <div>
-          <h1 className="text-5xl font-bold text-[#131313]">{bookName}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-[#131313]">{bookName}</h1>
           <p className="font-medium text-xl mt-4 text-[#131313CC]">
             Author : {author}
           </p>
           <div className="divider h-0"></div>
-          <p className="font-medium text-xl text-[#131313CC]">{category}</p>
+          <p className="font-medium text-xl text-[#131313CC]">{category} </p>
           <div className="divider h-0"></div>
+          {
+            bookInfo?.ageRange && (<><div className="flex gap-4 items-center text-xl">
+            <FaChildren className="text-2xl bg-gray-700 rounded-full text-pink-500 w-10 h-10 p-2"/>
+            <p className="font-medium text-xl text-[#131313CC]">Kids Book for [{bookInfo.ageRange}] years</p>
+            
+            </div>
+            <div className="divider h-0"></div></>)
+            }
           <p className="py-6 text-[#131313B3]">
             <span className="font-bold text-[#131313]">Review:</span> {review}
           </p>
@@ -80,13 +93,27 @@ const BookDetails = () => {
                     value={yearOfPublishing}
                   />
                   <BookDetailsTable name={"Rating: "} value={rating} />
+
+                  {bookInfo?.illustrator && (
+                    <BookDetailsTable name={"Illustrator: "} value={bookInfo.illustrator} />
+                  )}
                 </tbody>
               </table>
             </div>
           </div>
           <div className="flex gap-2 mt-3">
-          <button onClick={()=> handleReadList(id)} className="border border-[#1313134D] rounded-lg text-[#131313] font-semibold text-xl px-7 py-3">Read</button>
-          <button onClick={()=> handleWishList(id)} className="bg-[#50B1C9] font-semibold text-xl px-6 py-3 rounded-lg">Wishlist</button>
+            <button
+              onClick={() => handleReadList(id)}
+              className="border border-[#1313134D] rounded-lg text-[#131313] font-semibold text-xl px-7 py-3"
+            >
+              Read
+            </button>
+            <button
+              onClick={() => handleWishList(id)}
+              className="bg-[#50B1C9] font-semibold text-xl px-6 py-3 rounded-lg"
+            >
+              Wishlist
+            </button>
           </div>
         </div>
       </div>

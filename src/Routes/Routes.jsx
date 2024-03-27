@@ -5,6 +5,7 @@ import BookDetails from "../pages/BookDetails";
 import ListedBooks from "../pages/ListedBooks";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
+import KidsZone from './../pages/KidsZone';
 
 
 
@@ -15,13 +16,14 @@ export const router = createBrowserRouter([
       errorElement: <Error/>,
       children:[
         {
-            path:'/',
+            index:true,
             element: <Home />,
+          loader: ()=> fetch("/books.json"),
         },
         {
           path: '/listedbooks',
           element: <ListedBooks />,
-          loader: ()=> fetch("books.json"),
+          loader: ()=> fetch("/books.json"),
           
         },
         {
@@ -29,10 +31,22 @@ export const router = createBrowserRouter([
           element: <PagesToRead />,
         },
         {
+          path: '/kidszone',
+          element: <KidsZone />,
+          loader: ()=> fetch("/kidsbooks.json"),
+        },
+        {
+          path: '/kidszone/:id',
+          element: <BookDetails />,
+          loader: ()=> fetch('/kidsbooks.json')
+        },
+        {
           path: '/bookdetails/:id',
           element: <BookDetails />,
           loader: ()=> fetch('/books.json')
         },
       ]
+        
+      
     },
   ]);

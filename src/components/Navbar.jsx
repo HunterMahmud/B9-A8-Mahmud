@@ -14,6 +14,9 @@ const Navbar = () => {
       <NavLink to="/pagestoread" className="mr-4 font-semibold text-lg p-2">
         Pages to Read
       </NavLink>
+      <NavLink to="/kidszone" className="mr-4 font-semibold text-lg p-2">
+        Kids Zone
+      </NavLink>
     </>
   );
 

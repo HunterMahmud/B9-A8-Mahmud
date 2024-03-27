@@ -1,0 +1,97 @@
+[
+  {
+  "bookId": 10,
+  "bookName": "The Adventures of Sparky the Brave Bunny",
+  "author": "Emma Fox",
+  "illustrator": "Liam Parker",
+  "image": "https://i.ibb.co/ryXGCnf/10-sddefault.jpg",
+  "review": "Follow Sparky, a small bunny with a big heart, on his brave quest to save his friends from the mischievous fox, Freddy. With courage and cleverness, Sparky teaches children the importance of friendship and bravery.",
+  "totalPages": 32,
+  "rating": 4.5,
+  "category": "Chapter Book",
+  "tags": ["Adventure", "Friendship"],
+  "publisher": "Scholastic Inc.",
+  "yearOfPublishing": 2020,
+  "ageRange": "7-10"
+},
+
+{
+  "bookId": 11,
+  "bookName": "The Magical Garden of Whimsy",
+  "author": "Sarah Moon",
+  "illustrator": "Benjamin Sun",
+  "image": "https://i.ibb.co/zshLzPK/20-download.jpg",
+  "review": "Discover the enchanting world of Whimsy, where flowers talk and animals wear hats. Join Lily and her friends on a delightful journey through this magical garden filled with wonders and surprises.",
+  "totalPages": 40,
+  "rating": 4.8,
+  "category": "Picture Book",
+  "tags": ["Fantasy", "Friendship"],
+  "publisher": "Scholastic Inc.",
+  "yearOfPublishing": 2021,
+  "ageRange": "4-8"
+},
+
+{
+  "bookId": 12,
+  "bookName": "Penguin's Big Adventure",
+  "author": "Michael Frost",
+  "illustrator": "Emily Chen",
+  "image": "https://i.ibb.co/GH1wTt9/30-penguine.jpg",
+  "review": "When Penguin decides to explore beyond his iceberg home, he meets new friends and faces unexpected challenges. Join Penguin on his big adventure and learn valuable lessons about courage, kindness, and acceptance.",
+  "totalPages": 24,
+  "rating": 4.2,
+  "category": "Picture Book",
+  "tags": ["Friendship", "Adventure"],
+  "publisher": "Scholastic Inc.",
+  "yearOfPublishing": 2019,
+  "ageRange": "2-5"
+},
+
+{
+  "bookId": 13,
+  "bookName": "The Little Dragon Who Couldn't Breathe Fire",
+  "author": "Daniel Swift",
+  "illustrator": "Sophia Nguyen",
+  "image": "https://i.ibb.co/yqMPXmC/40-6954367.jpg",
+  "review": "Meet Fluffy, the dragon who can't breathe fire! Follow his hilarious journey as he tries to fit in with the other dragons. Through laughter and mishaps, Fluffy learns that being different is what makes him special.",
+  "totalPages": 36,
+  "rating": 4.6,
+  "category": "Chapter Book",
+  "tags": ["Humor", "Friendship"],
+  "publisher": "Scholastic Inc.",
+  "yearOfPublishing": 2022,
+  "ageRange": "3-7"
+},
+
+{
+  "bookId": 14,
+  "bookName": "The Secret of the Rainbow Forest",
+  "author": "Jessica Reed",
+  "illustrator": "Matthew Wong",
+  "image": "https://i.ibb.co/9tvYBHM/50-25526516.jpg",
+  "review": "Join twins Mia and Max on an exciting adventure through the mysterious Rainbow Forest as they search for hidden treasure. Along the way, they encounter magical creatures and solve puzzles, teaching readers the value of teamwork and perseverance.",
+  "totalPages": 48,
+  "rating": 4.7,
+  "category": "Chapter Book",
+  "tags": ["Mystery", "Adventure"],
+  "publisher": "Scholastic Inc.",
+  "yearOfPublishing": 2023,
+  "ageRange": "5-9"
+},
+
+{
+  "bookId": 15,
+  "bookName": "The Curious Case of Mr. Whiskers",
+  "author": "Olivia Lane",
+  "illustrator": "Lucas Garcia",
+  "image": "https://i.ibb.co/nfTLdbM/60-51-Irs-Lp4-Qn-L.jpg",
+  "review": "When the town's beloved cat, Mr. Whiskers, goes missing, siblings Alex and Sarah embark on a detective adventure to solve the mystery. Join them as they follow clues, interview suspects, and unravel secrets in this captivating tale of friendship and discovery.",
+  "totalPages": 56,
+  "rating": 4.9,
+  "category": "Chapter Book",
+  "tags": ["Mystery", "Friendship"],
+  "publisher": "Scholastic Inc.",
+  "yearOfPublishing": 2024,
+  "ageRange": "6-10"
+}
+]
