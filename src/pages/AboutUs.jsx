@@ -16,15 +16,17 @@ const AboutUs = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(contactDetails.name.length && contactDetails.email.length && contactDetails.message.length){
-
+    if (
+      contactDetails.name.length &&
+      contactDetails.email.length &&
+      contactDetails.message.length
+    ) {
       const prevUser = JSON.parse(localStorage.getItem("user")) || [];
       prevUser.push(contactDetails);
       localStorage.setItem("user", JSON.stringify(prevUser));
-      toast.success("Your Information Saved to LocalStorage.")
-    }
-    else{
-      toast.error('Add the field to send.')
+      toast.success("Your Information Saved to LocalStorage.");
+    } else {
+      toast.error("Add the field to send.");
     }
   };
 
@@ -35,49 +37,30 @@ const AboutUs = () => {
           <h1 className="text-[#131313] my-7 text-[40px] text-center font-bold">
             About Us
           </h1>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 text-[#131313] text-lg">
             <p>
-              Nova Books is an esteemed online bookshop dedicated to fostering a
-              profound appreciation for literature among its patrons. Our
-              fundamental belief is that bookshops serve as indispensable
-              pillars of a vibrant and enriched culture. They serve as vital
-              hubs where authors forge connections with readers, where new
-              literary voices are discovered, and where the love for reading is
-              instilled in young minds—a passion that can endure a lifetime.
+              Nova Books, an online haven for book lovers, is passionate about
+              fostering a love for literature. We believe independent bookshops
+              are cultural cornerstones, fostering connections between authors
+              and readers, nurturing new voices, and igniting a lifelong love of
+              reading.
             </p>
             <p>
-              Moreover, bookshops are pivotal landmarks within our communities,
-              serving as bastions of knowledge and culture. They are staffed by
-              passionate individuals who possess a genuine ardor for books and
-              the written word. As the landscape of book purchasing evolves with
-              the advent of online shopping, we recognized the importance of
-              providing an effortless and accessible avenue for
- acquiring
-              literature.
+              Beyond their role in bookselling, these shops are vibrant
+              community hubs, brimming with knowledge and a love for the written
+              word. Recognizing the evolving landscape of book buying, Nova
+              Books offers an effortless way to acquire a vast array of
+              literature while supporting these cherished establishments.
             </p>
 
             <p>
-              At Nova Books, our mission is twofold: to facilitate seamless
-              access to a vast array of literary works and to champion the
-              invaluable role of independent bookshops. We endeavor to offer a
-              user-friendly platform that empowers readers to procure their
-              favorite titles with ease, all while supporting the independent
-              bookstores that enrich our communities.
-            </p>
-            <p>
-              We firmly believe that independent bookshops merit a greater
-              presence within the online book-buying sphere. Through Nova Books,
-              we aim to fortify the delicate ecosystem surrounding bookselling,
-              ensuring that these cherished establishments remain integral to
-              our cultural fabric and communal identity.
-            </p>
-            <p>
-              Join us in celebrating the enduring allure of literature and the
-              enduring legacy of independent bookshops. Together, let us
-              preserve and perpetuate the invaluable contributions of these
-              literary sanctuaries to our collective heritage. Nova Books—a
-              beacon of literary excellence and a steadfast advocate for the
-              enduring power of the written word.
+              Our mission is two-fold: provide easy access to books and champion
+              independent bookstores. We believe they deserve a strong online
+              presence, ensuring their survival and continued contribution to
+              our cultural identity. Join us in celebrating literature and these
+              irreplaceable sanctuaries for the written word. Let's preserve
+              their legacy together. Nova Books: Your portal to literary
+              excellence and a champion of the enduring power of books.
             </p>
           </div>
           {/* about section done */}
@@ -133,14 +116,14 @@ const AboutUs = () => {
             <div className="collapse collapse-arrow bg-base-200">
               <input type="radio" name="my-accordion-2" />
               <div className="collapse-title text-xl font-medium">
-                How can I access detailed information about a specific book?
+                Q: How can I access detailed information about a specific book?
               </div>
               <div className="collapse-content">
                 <p>
                   Ans: To view detailed information about a book, simply click
-                  on its title or cover image to visit the book's details page.
-                  Here, you'll find comprehensive information such as the book's
-                  synopsis, author details, genre, ratings, and more.
+                  on its entire card to visit the book's details page. Here,
+                  you'll find comprehensive information such as the book's
+                  author details, review, ratings, and more.
                 </p>
               </div>
             </div>
@@ -155,7 +138,7 @@ const AboutUs = () => {
                   list and wishlist. You can easily navigate to these sections
                   from your account dashboard. Additionally, you have the option
                   to sort and manage your lists based on various criteria such
-                  as title, author, genre, and date added.
+                  as Number of pages, Pulished Year, Ratting added.
                 </p>
               </div>
             </div>
@@ -169,9 +152,9 @@ const AboutUs = () => {
                 <p>
                   Ans: Yes, NovaBooks features a customizable bar chart tool
                   that allows users to visualize their reading progress. Simply
-                  access the "Reading Stats" section from your account dashboard
-                  to view a graphical representation of the number of pages
-                  you've read over time.
+                  access the "Page to Read" menu from your navbar to view a
+                  graphical representation of the number of pages you've read
+                  over time.
                 </p>
               </div>
             </div>
