@@ -6,6 +6,7 @@ import ListedBooks from "../pages/ListedBooks";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
 import KidsZone from './../pages/KidsZone';
+import AboutUs from "../pages/AboutUs";
 
 
 
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
           element: <ListedBooks />,
           loader: ()=> fetch("/books.json"),
           
+        },
+        {
+          path: '/aboutus',
+          element: <AboutUs />,
         },
         {
           path: '/pagestoread',

@@ -6,9 +6,6 @@ import { saveToLocalStorage } from "../utils/LocalStorage";
 import { getDataFromLocalStorage } from "./../utils/LocalStorage";
 import { FaChildren } from "react-icons/fa6";
 
-
-
-
 const BookDetails = () => {
   const bookData = useLoaderData();
   const { id } = useParams();
@@ -41,29 +38,35 @@ const BookDetails = () => {
     }
   };
   return (
-    <div className="hero max-w-6xl mx-auto bg-white">
-      <div className="hero-content flex-col lg:flex-row">
+    <div className=" max-w-6xl my-16 mx-auto bg-white">
+      <div className="flex relative items-center justify-center gap-5 flex-col  lg:flex-row">
         <img
           src={image}
-          className="max-w-[500px] h-full rounded-2xl p-20 py-[110px] bg-[#1313130D]"
+          className="max-w-[500px]  h-[740px] rounded-2xl p-20 py-[110px] bg-[#1313130D]"
         />
+        
 
-        <div>
-          <h1 className="text-3xl md:text-4xl font-bold text-[#131313]">{bookName}</h1>
+        <div className="">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#131313]">
+            {bookName}
+          </h1>
           <p className="font-medium text-xl mt-4 text-[#131313CC]">
             Author : {author}
           </p>
           <div className="divider h-0"></div>
           <p className="font-medium text-xl text-[#131313CC]">{category} </p>
           <div className="divider h-0"></div>
-          {
-            bookInfo?.ageRange && (<><div className="flex gap-4 items-center text-xl">
-            <FaChildren className="text-2xl bg-gray-700 rounded-full text-pink-500 w-10 h-10 p-2"/>
-            <p className="font-medium text-xl text-[#131313CC]">Kids Book for [{bookInfo.ageRange}] years</p>
-            
-            </div>
-            <div className="divider h-0"></div></>)
-            }
+          {bookInfo?.ageRange && (
+            <>
+              <div className="flex gap-4 items-center text-xl">
+                <FaChildren className="text-2xl bg-gray-700 rounded-full text-pink-500 w-10 h-10 p-2" />
+                <p className="font-medium text-xl text-[#131313CC]">
+                  Kids Book for [{bookInfo.ageRange}] years
+                </p>
+              </div>
+              <div className="divider h-0"></div>
+            </>
+          )}
           <p className="py-6 text-[#131313B3]">
             <span className="font-bold text-[#131313]">Review:</span> {review}
           </p>
@@ -95,7 +98,10 @@ const BookDetails = () => {
                   <BookDetailsTable name={"Rating: "} value={rating} />
 
                   {bookInfo?.illustrator && (
-                    <BookDetailsTable name={"Illustrator: "} value={bookInfo.illustrator} />
+                    <BookDetailsTable
+                      name={"Illustrator: "}
+                      value={bookInfo.illustrator}
+                    />
                   )}
                 </tbody>
               </table>

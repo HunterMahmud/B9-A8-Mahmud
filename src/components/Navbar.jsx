@@ -17,6 +17,9 @@ const Navbar = () => {
       <NavLink to="/kidszone" className="mr-4 font-semibold text-lg p-2">
         Kids Zone
       </NavLink>
+      <NavLink to="/aboutus" className="mr-4 font-semibold text-lg p-2">
+        About Us
+      </NavLink>
     </>
   );
 
