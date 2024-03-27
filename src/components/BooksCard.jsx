@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const  BooksCard = ({ book,path }) => {
+const  BooksCard = ({ book, path }) => {
   
   const { bookId, bookName, author, image, rating, tags,category } = book;
   return (

@@ -8,6 +8,7 @@ import { FaChildren } from "react-icons/fa6";
 
 const BookDetails = () => {
   const bookData = useLoaderData();
+  console.log(bookData);
   const { id } = useParams();
   const bookInfo = bookData.find((book) => book.bookId == id);
   const {

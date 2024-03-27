@@ -115,9 +115,11 @@ const ListedBooks = () => {
       </div>
 
       <div className="flex my-10 flex-col w-full gap-4">
-        {localData.map((book) => (
-          <Listed key={book.bookId} book={book} />
-        ))}
+        {localData.map((book) => {
+          let path = 'bookdetails';
+          if(book?.ageRange) path = 'kidszone';
+          return <Listed key={book.bookId} path={path}  book={book} />
+        })}
       </div>
     </div>
   );

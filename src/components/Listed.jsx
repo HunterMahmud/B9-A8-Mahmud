@@ -4,7 +4,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { MdOutlineContactPage } from "react-icons/md";
 import { Link } from "react-router-dom";
 //w-[90%] md:w-[calc(100%-50px)] lg:w-full flex flex-col items-center justify-center mx-6 lg:mx-auto
-const Listed = ({ book }) => {
+const Listed = ({ book,path }) => {
   //console.log(book);
   const {
     bookId,
@@ -69,7 +69,7 @@ const Listed = ({ book }) => {
               Rating: {rating}
             </p>
             <Link
-              to={`/bookdetails/${bookId}`}
+              to={`/${path}/${bookId}`}
               className="text-white rounded-[30px] px-3 py-2 bg-[#23BE0A] font-semibold flex justify-center items-center mb-3 md:mb-0"
             >
               View Details
