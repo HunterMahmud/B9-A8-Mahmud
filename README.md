@@ -2,7 +2,8 @@
 
 **Nova Books** is a user-friendly online bookstore designed to enhance your reading experience.
 
-**Visit the live site:** [Nova Books](**https://b9-a8-mahmud.netlify.app/**).
+**Visit the live site:** [Nova Books](https://b9-a8-mahmud.netlify.app/).
+
 
 **Features:**
 
