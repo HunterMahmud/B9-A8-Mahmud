@@ -39,10 +39,12 @@ const ListedBooks = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <h1 className="text-center p-5 text-[#131313] my-5 text-3xl bg-[#1313130D] font-bold rounded-2xl">
+    <div className="flex flex-col justify-center items-center max-w-6xl mx-auto  ">
+     <div className="flex justify-center items-center w-full ">
+     <h1 className=" text-center w-[95%] lg:w-[97%] p-5 text-[#131313] my-5 text-3xl bg-[#1313130D] font-bold rounded-2xl">
         Books
       </h1>
+     </div>
 
       <div className="flex justify-center mx-auto mt-5 mb-10">
         <select
@@ -66,7 +68,7 @@ const ListedBooks = () => {
         </select>
       </div>
 
-      <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap">
+      <div className="flex items-center overflow-x-auto overflow-y-hidden w-full ml-5  sm:justify-start flex-nowrap">
         <Link
           onClick={() => setCurrentTab(0)}
           to=""
@@ -112,7 +114,7 @@ const ListedBooks = () => {
         </Link>
       </div>
 
-      <div className="flex my-10 flex-col gap-4">
+      <div className="flex my-10 flex-col w-full gap-4">
         {localData.map((book) => (
           <Listed key={book.bookId} book={book} />
         ))}

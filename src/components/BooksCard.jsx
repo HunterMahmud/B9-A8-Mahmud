@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const  BooksCard = ({ book }) => {
   
   const { bookId, bookName, author, image, rating, tags,category } = book;
   return (
-    <Link to={`/bookdetails/${bookId}`} className="card bg-base-100 border max-w-[400px] mx-auto border-gray-300">
+    <Link to={`/bookdetails/${bookId}`} className="card bg-base-100 border w-[90%] sm:max-w-[400px] mx-auto border-gray-300">
       <figure className="px-10 pt-10">
         <img src={image} alt="Shoes" className="rounded-xl max-h-[350px] w-[370px]" />
       </figure>
