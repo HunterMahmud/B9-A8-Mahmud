@@ -16,10 +16,16 @@ const AboutUs = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const prevUser = JSON.parse(localStorage.getItem("user")) || [];
-    prevUser.push(contactDetails);
-    localStorage.setItem("user", JSON.stringify(prevUser));
-    toast.success("Your Information Saved to LocalStorage.")
+    if(contactDetails.name.length && contactDetails.email.length && contactDetails.message.length){
+
+      const prevUser = JSON.parse(localStorage.getItem("user")) || [];
+      prevUser.push(contactDetails);
+      localStorage.setItem("user", JSON.stringify(prevUser));
+      toast.success("Your Information Saved to LocalStorage.")
+    }
+    else{
+      toast.error('Add the field to send.')
+    }
   };
 
   return (
@@ -45,7 +51,7 @@ const AboutUs = () => {
               passionate individuals who possess a genuine ardor for books and
               the written word. As the landscape of book purchasing evolves with
               the advent of online shopping, we recognized the importance of
-              providing an effortless and accessible avenue forimport { toast } from 'react-hot-toast';
+              providing an effortless and accessible avenue for
  acquiring
               literature.
             </p>
@@ -190,7 +196,7 @@ const AboutUs = () => {
                   type="text"
                   placeholder="Your name"
                   required=""
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:outline-[#23BE0A] bg-gray-100"
                 />
               </div>
               <div>
@@ -201,7 +207,7 @@ const AboutUs = () => {
                   type="email"
                   placeholder="Your email"
                   required=""
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+                  className="block w-full p-2 rounded focus:outline-none focus:ring  focus:outline-[#23BE0A] bg-gray-100"
                 />
               </div>
               <div>
@@ -211,13 +217,13 @@ const AboutUs = () => {
                   id="message"
                   type="text"
                   placeholder="Message..."
-                  className="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+                  className="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:outline-[#23BE0A] bg-gray-100"
                 ></textarea>
               </div>
               <div>
                 <button
                   type="submit"
-                  className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-600 focus:dark:ring-violet-600 hover:dark:ring-violet-600 dark:text-gray-50"
+                  className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none bg-[#23BE0A] dark:text-gray-50"
                 >
                   Send
                 </button>
@@ -237,7 +243,7 @@ const AboutUs = () => {
                 rel="noopener noreferrer"
                 href="https://github.com/huntermahmud/"
                 title="github"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-green-600 text-gray-50"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-[#23BE0A] text-gray-50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +259,7 @@ const AboutUs = () => {
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/huntermahmud/"
                 title="Linkedin"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-green-600 text-gray-50"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-[#23BE0A] text-gray-50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +276,7 @@ const AboutUs = () => {
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/hasan.almahmud.101/"
                 title="Facebook"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-green-600 text-gray-50"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-[#23BE0A] text-gray-50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -285,7 +291,7 @@ const AboutUs = () => {
                 rel="noopener noreferrer"
                 href="mailto:mahmudthedatahunter@gmail.com"
                 title="Gmail"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-green-600 text-gray-50"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10  bg-[#23BE0A] text-gray-50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
