@@ -8,7 +8,7 @@ const  BooksCard = ({ book, path }) => {
   return (
     <Link to={`/${path}/${bookId}`} className={`card ${book?.ageRange?"bg-pink-200":"bg-base-100"} border w-[90%] sm:max-w-[400px] mx-auto border-gray-300`}>
       <figure className="px-10 pt-10">
-        <img src={image} alt="Shoes" className="rounded-xl max-h-[350px] w-[370px]" />
+        <img src={image} alt="Shoes" className="rounded-xl h-[350px] w-[370px]" />
       </figure>
       <div className="card-body items-start">
         <div className="flex gap-3">
