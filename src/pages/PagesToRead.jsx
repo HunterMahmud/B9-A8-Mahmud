@@ -37,11 +37,12 @@ const PagesToRead = () => {
             top: 20,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 10,
           }}
         >
           <CartesianGrid strokeDasharray="3 4" />
           <XAxis
+          
             dataKey="bookName"
             tick={{
               textAnchor: "middle",
@@ -49,7 +50,8 @@ const PagesToRead = () => {
                 overflow: "hidden",
                 whiteSpace: "pre-line",
                 textOverflow: "ellipsis",
-              },
+                fontSize: '10px'
+              }
             }}
           />
           <YAxis />
